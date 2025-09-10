@@ -46,6 +46,23 @@ const consolas = localFont({
   display: "swap",
 });
 
+const saans = localFont({
+  src: [
+    {
+      path: "../public/fonts/Saans-TRIAL-Light.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Saans-TRIAL-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+  ],
+  variable: "--font-saans",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Playfield - Superintelligence for Enterprise",
   description:
@@ -63,7 +80,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${testSignifier.variable} ${consolas.variable}`}
+      className={`${testSignifier.variable} ${consolas.variable} ${saans.variable}`}
     >
       <body className="antialiased">
         <div className="grain-overlay" />

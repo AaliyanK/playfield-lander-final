@@ -14,11 +14,15 @@ module.exports = {
         inkSoft: "#2B2B2B",
         rule: "rgba(0, 0, 0, 0.08)",
         veil: "rgba(0, 0, 0, 0.3)",
+        // Saans font colors from design
+        "saans-light": "#E9EBDF", // Header text color
+        "saans-muted": "#CBCCC4", // Body text color
       },
       fontFamily: {
         serif: ["var(--font-test-signifier)", "serif"],
-        sans: ["var(--font-consolas)", "monospace"],
+        sans: ["var(--font-saans)", "system-ui", "sans-serif"],
         mono: ["var(--font-consolas)", "monospace"],
+        saans: ["var(--font-saans)", "system-ui", "sans-serif"],
       },
       fontSize: {
         "display-xl": ["4rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
@@ -26,6 +30,11 @@ module.exports = {
           "2.5rem",
           { lineHeight: "1.2", letterSpacing: "-0.01em" },
         ],
+        "saans-header": [
+          "3rem",
+          { lineHeight: "1.05", letterSpacing: "-0.5px" },
+        ], // 48px with 50.4px line-height
+        "saans-body": ["1rem", { lineHeight: "1.5", letterSpacing: "0.2px" }], // 16px with 24px line-height
         "body-m": ["1.125rem", { lineHeight: "1.6" }],
         "caption-s": ["0.875rem", { lineHeight: "1.4" }],
       },

@@ -44,7 +44,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section ref={ref} className="py-32 px-6 bg-ink/2">
+    <section ref={ref} id="how-it-works" className="py-32 px-6 bg-ink/2">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -52,7 +52,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="space-y-20"
         >
-          <h2 className="text-display-l text-center">How Playfield works</h2>
+          <h2 className="text-saans-header text-center">How Playfield works</h2>
 
           <div className="space-y-16">
             {sections.map((section, index) => (
@@ -70,12 +70,12 @@ export default function HowItWorks() {
                 className="grid lg:grid-cols-3 gap-12 items-start"
               >
                 <div className="lg:col-span-1">
-                  <h3 className="text-display-l text-ink">{section.title}</h3>
+                  <h3 className="text-saans-header">{section.title}</h3>
                 </div>
 
                 <div className="lg:col-span-2 space-y-4">
                   {section.content.map((paragraph, pIndex) => (
-                    <p key={pIndex} className="text-body-m text-inkSoft">
+                    <p key={pIndex} className="text-saans-body">
                       {paragraph}
                     </p>
                   ))}

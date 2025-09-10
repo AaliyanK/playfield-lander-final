@@ -17,7 +17,7 @@ export default function Footer() {
 
           <div className="flex justify-center">
             <div
-              className="text-xl font-serif text-ink"
+              className="text-xl font-saans text-ink"
               style={{ fontWeight: "300" }}
             >
               Playfield

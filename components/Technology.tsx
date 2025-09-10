@@ -71,8 +71,8 @@ export default function Technology() {
           className="space-y-16"
         >
           <div className="text-center space-y-4">
-            <h2 className="text-display-l">Technology</h2>
-            <p className="text-body-m text-inkSoft max-w-2xl mx-auto">
+            <h2 className="text-saans-header">Technology</h2>
+            <p className="text-saans-body max-w-2xl mx-auto">
               The operator moves from request to result with four quiet steps.
             </p>
           </div>
@@ -145,12 +145,10 @@ export default function Technology() {
                     }}
                     transition={{ duration: 0.3 }}
                   >
-                    <h3 className="text-display-l mb-4 font-medium">
+                    <h3 className="text-saans-header mb-4 font-medium">
                       {step.title}
                     </h3>
-                    <p className="text-body-m text-inkSoft">
-                      {step.description}
-                    </p>
+                    <p className="text-saans-body">{step.description}</p>
                   </motion.div>
                 </motion.div>
               ))}

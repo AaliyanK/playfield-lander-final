@@ -40,7 +40,7 @@ export default function Pillars() {
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           className="space-y-16"
         >
-          <h2 className="text-display-l text-center">Three pillars</h2>
+          <h2 className="text-saans-header text-center">Three pillars</h2>
 
           <div className="grid md:grid-cols-3 gap-8">
             {pillars.map((pillar, index) => (
@@ -360,10 +360,8 @@ export default function Pillars() {
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-display-l text-ink">{pillar.title}</h3>
-                  <p className="text-body-m text-inkSoft">
-                    {pillar.description}
-                  </p>
+                  <h3 className="text-saans-header">{pillar.title}</h3>
+                  <p className="text-saans-body">{pillar.description}</p>
                 </div>
               </motion.div>
             ))}

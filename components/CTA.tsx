@@ -59,7 +59,9 @@ export default function CTA() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-center space-y-12"
           >
-            <h2 className="text-display-l">Bring the operator to your team</h2>
+            <h2 className="text-saans-header">
+              Let Playfield modernize your enterprise
+            </h2>
 
             <div className="max-w-md mx-auto">
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -71,7 +73,7 @@ export default function CTA() {
                     type="text"
                     name="name"
                     required
-                    className="w-full px-4 py-3 bg-paper border-b-2 border-ink/20 focus:border-accent focus:outline-none transition-colors text-body-m"
+                    className="w-full px-4 py-3 bg-paper border-b-2 border-ink/20 focus:border-accent focus:outline-none transition-colors text-saans-body"
                     placeholder="Your full name"
                   />
                 </div>
@@ -84,7 +86,7 @@ export default function CTA() {
                     type="email"
                     name="email"
                     required
-                    className="w-full px-4 py-3 bg-paper border-b-2 border-ink/20 focus:border-accent focus:outline-none transition-colors text-body-m"
+                    className="w-full px-4 py-3 bg-paper border-b-2 border-ink/20 focus:border-accent focus:outline-none transition-colors text-saans-body"
                     placeholder="you@company.com"
                   />
                 </div>
@@ -157,7 +159,7 @@ export default function CTA() {
             </button>
 
             <div className="space-y-6">
-              <h3 className="text-display-l">Get in touch</h3>
+              <h3 className="text-saans-header">Get in touch</h3>
 
               <form className="space-y-4">
                 <div>

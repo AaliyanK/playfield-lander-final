@@ -17,16 +17,16 @@ export default function About() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="space-y-8 text-center"
         >
-          <div className="space-y-6 text-body-m text-inkSoft max-w-3xl mx-auto">
-            <p>
+          <div className="space-y-6 max-w-3xl mx-auto">
+            <p className="text-saans-body">
               Playfield is where enterprise agents learn to work like teammates.
             </p>
-            <p>Not toy demos.</p>
-            <p>
+            <p className="text-saans-body">Not toy demos.</p>
+            <p className="text-saans-body">
               Agents that understand the environment policies and desired
               outcomes.
             </p>
-            <p>
+            <p className="text-saans-body">
               Playfield turns your stack into a navigable field then teaches an
               agent to reason over it take actions and show its receipts.
             </p>

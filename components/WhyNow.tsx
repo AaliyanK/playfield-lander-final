@@ -31,7 +31,7 @@ export default function WhyNow() {
   ];
 
   return (
-    <section ref={ref} className="py-32 px-6 bg-ink/2 relative">
+    <section ref={ref} id="why-now" className="py-32 px-6 bg-ink/2 relative">
       {/* Unified Network Grid Background */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         {isClient && (
@@ -601,7 +601,7 @@ export default function WhyNow() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="space-y-16"
         >
-          <h2 className="text-display-l text-center">Why now</h2>
+          <h2 className="text-saans-header text-center">Why now</h2>
 
           <div className="grid md:grid-cols-3 gap-12">
             {reasons.map((reason, index) => (
@@ -618,8 +618,8 @@ export default function WhyNow() {
                 }}
                 className="space-y-4"
               >
-                <h3 className="text-display-l text-ink">{reason.title}</h3>
-                <p className="text-body-m text-inkSoft">{reason.description}</p>
+                <h3 className="text-saans-header">{reason.title}</h3>
+                <p className="text-saans-body">{reason.description}</p>
               </motion.div>
             ))}
           </div>

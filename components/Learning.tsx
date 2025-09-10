@@ -9,7 +9,7 @@ export default function Learning() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-32 px-6">
+    <section ref={ref} id="learning" className="py-32 px-6">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -18,8 +18,8 @@ export default function Learning() {
           className="space-y-12"
         >
           <div className="text-center space-y-4">
-            <h2 className="text-display-l">Improves with use</h2>
-            <p className="text-body-m text-inkSoft max-w-2xl mx-auto">
+            <h2 className="text-saans-header">Improves with use</h2>
+            <p className="text-saans-body max-w-2xl mx-auto">
               Evals measure success on your workflows.
               <br />
               Feedback tunes the model for accuracy and speed.

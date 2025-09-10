@@ -22,7 +22,7 @@ export default function Integrations() {
   ];
 
   return (
-    <section ref={ref} className="py-32 px-6 bg-ink/2">
+    <section ref={ref} id="integrations" className="py-32 px-6 bg-ink/2">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -31,13 +31,13 @@ export default function Integrations() {
           className="space-y-16"
         >
           <div className="text-center space-y-4">
-            <h2 className="text-display-l">Start with Microsoft 365</h2>
-            <p className="text-body-m text-inkSoft max-w-2xl mx-auto">
-              Begin where most work lives.
-              <br />
-              Expand through the Model Context Protocol to the rest of your
-              stack.
-            </p>
+            <h2 className="text-saans-header">
+              Connects to the tools you already use
+            </h2>
+            <div className="text-saans-body max-w-2xl mx-auto space-y-2">
+              <p>Playfield overlays your existing stack.</p>
+              <p>We meet you where you are—and make it usable.</p>
+            </div>
           </div>
 
           {/* Integration Marquee */}

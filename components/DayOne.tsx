@@ -15,7 +15,7 @@ export default function DayOne() {
   ];
 
   return (
-    <section ref={ref} className="py-32 px-6">
+    <section ref={ref} id="day-one" className="py-32 px-6">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -23,7 +23,7 @@ export default function DayOne() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="space-y-12"
         >
-          <h2 className="text-display-l text-center">Day one value</h2>
+          <h2 className="text-saans-header text-center">Day one value</h2>
 
           <div className="space-y-6">
             {benefits.map((benefit, index) => (
@@ -41,7 +41,7 @@ export default function DayOne() {
                 className="flex items-start space-x-4"
               >
                 <div className="w-2 h-2 bg-accent rounded-full mt-3 flex-shrink-0" />
-                <p className="text-body-m text-inkSoft">{benefit}</p>
+                <p className="text-saans-body">{benefit}</p>
               </motion.div>
             ))}
           </div>

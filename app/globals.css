@@ -9,7 +9,7 @@
   }
 
   body {
-    @apply bg-paper text-ink font-sans;
+    @apply bg-paper text-ink font-saans;
     background-image: radial-gradient(
       circle at 1px 1px,
       rgba(0, 0, 0, 0.02) 1px,
@@ -66,7 +66,7 @@
   }
 
   .text-display-xl {
-    @apply font-serif;
+    @apply font-saans;
     font-weight: 300;
     font-size: 4rem;
     line-height: 1.1;
@@ -74,7 +74,7 @@
   }
 
   .text-display-l {
-    @apply font-serif;
+    @apply font-saans;
     font-weight: 300;
     font-size: 2.5rem;
     line-height: 1.2;
@@ -82,15 +82,33 @@
   }
 
   .text-body-m {
-    @apply font-sans;
+    @apply font-saans;
     font-size: 1.125rem;
     line-height: 1.6;
   }
 
   .text-caption-s {
-    @apply font-sans;
+    @apply font-saans;
     font-size: 0.875rem;
     line-height: 1.4;
+  }
+
+  /* Saans Font Utility Classes */
+  /* Updated with black colors for better readability */
+  .text-saans-header {
+    @apply font-saans text-ink;
+    font-size: 3rem;
+    line-height: 1.05;
+    letter-spacing: -0.5px;
+    font-weight: 300;
+  }
+
+  .text-saans-body {
+    @apply font-saans text-inkSoft;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 0.2px;
+    font-weight: 300;
   }
 
   .rule-line {

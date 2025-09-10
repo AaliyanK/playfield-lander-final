@@ -21,25 +21,21 @@ export default function WhatIs() {
           className="grid lg:grid-cols-2 gap-16 items-center"
         >
           <div className="space-y-8">
-            <h2
-              className="text-display-l"
-              style={{
-                fontSize: "50px",
-                lineHeight: "100%",
-                letterSpacing: "0%",
-                fontWeight: "300",
-              }}
-            >
+            <h2 className="text-saans-header">
               One operator for your enterprise
             </h2>
 
-            <div className="space-y-6 text-body-m text-inkSoft">
-              <p>
+            <div className="space-y-6">
+              <p className="text-saans-body">
                 Playfield connects to work systems and understands your
                 ontology.
               </p>
-              <p>It plans. Writes code. Executes in a sandbox.</p>
-              <p>You query. It returns results you can trust.</p>
+              <p className="text-saans-body">
+                It plans. Writes code. Executes in a sandbox.
+              </p>
+              <p className="text-saans-body">
+                You query. It returns results you can trust.
+              </p>
             </div>
           </div>
 

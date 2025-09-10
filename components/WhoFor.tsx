@@ -28,7 +28,7 @@ export default function WhoFor() {
   ];
 
   return (
-    <section ref={ref} className="py-32 px-6 bg-ink/2">
+    <section ref={ref} id="who-for" className="py-32 px-6 bg-ink/2">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -36,7 +36,7 @@ export default function WhoFor() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="space-y-16"
         >
-          <h2 className="text-display-l text-center">Who it is for</h2>
+          <h2 className="text-saans-header text-center">Who it is for</h2>
 
           <div className="grid md:grid-cols-3 gap-12">
             {examples.map((example, index) => (
@@ -53,10 +53,10 @@ export default function WhoFor() {
                 }}
                 className="space-y-4"
               >
-                <h3 className="text-display-l text-ink">{example.category}</h3>
+                <h3 className="text-saans-header">{example.category}</h3>
                 <div className="space-y-2">
                   {example.tasks.map((task, taskIndex) => (
-                    <p key={taskIndex} className="text-body-m text-inkSoft">
+                    <p key={taskIndex} className="text-saans-body">
                       {task}
                     </p>
                   ))}

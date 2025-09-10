@@ -19,7 +19,7 @@ export default function AbstractBrainSilhouette({
     return (
       <div
         className={`absolute inset-0 pointer-events-none ${className}`}
-        style={{ zIndex: -1 }}
+        style={{ zIndex: -2 }}
       />
     );
   }
@@ -27,959 +27,657 @@ export default function AbstractBrainSilhouette({
   return (
     <div
       className={`absolute inset-0 pointer-events-none ${className}`}
-      style={{ zIndex: -1 }}
+      style={{ zIndex: -2 }}
     >
       <svg
         viewBox="0 0 1200 800"
-        className="w-full h-full opacity-80"
+        className="w-full h-full opacity-100"
         style={{ filter: "blur(0.2px)" }}
       >
         <defs>
-          <linearGradient
-            id="brainGradient"
-            x1="0%"
-            y1="0%"
-            x2="100%"
-            y2="100%"
-          >
-            <stop offset="0%" stopColor="#88B772" stopOpacity="0.8" />
-            <stop offset="50%" stopColor="#88B772" stopOpacity="0.4" />
-            <stop offset="100%" stopColor="#88B772" stopOpacity="0.1" />
+          <linearGradient id="nodeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#6A9B5A" stopOpacity="1.0" />
+            <stop offset="100%" stopColor="#6A9B5A" stopOpacity="0.7" />
           </linearGradient>
           <linearGradient
-            id="signalGradient"
+            id="connectionGradient"
             x1="0%"
             y1="0%"
             x2="100%"
             y2="100%"
           >
-            <stop offset="0%" stopColor="#88B772" stopOpacity="0" />
-            <stop offset="30%" stopColor="#88B772" stopOpacity="0.6" />
-            <stop offset="70%" stopColor="#88B772" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="#88B772" stopOpacity="0" />
+            <stop offset="0%" stopColor="#6A9B5A" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#6A9B5A" stopOpacity="0.3" />
           </linearGradient>
         </defs>
 
-        {/* Minimalist Brain Network - Anatomically accurate node placement */}
+        {/* Central Text Area - Keep Clear */}
+        <rect
+          x="400"
+          y="200"
+          width="400"
+          height="400"
+          fill="none"
+          stroke="none"
+        />
 
-        {/* Left Hemisphere - Frontal Lobe (Top Front) */}
+        {/* Left Hemisphere - Frontal Lobe */}
         <circle
-          cx="250"
+          cx="150"
           cy="180"
-          r="2.2"
-          fill="#88B772"
-          opacity="0.7"
-          className="node-pulse"
+          r="6"
+          fill="url(#nodeGradient)"
+          className="animate-pulse"
         >
           <animate
             attributeName="opacity"
-            values="0.4;0.8;0.4"
-            dur="3.2s"
+            values="0.6;1.0;0.6"
+            dur="3s"
             repeatCount="indefinite"
           />
           <animate
             attributeName="r"
-            values="1.7;2.7;1.7"
-            dur="3.2s"
+            values="5;7;5"
+            dur="3s"
             repeatCount="indefinite"
           />
         </circle>
-        <circle
-          cx="220"
-          cy="200"
-          r="1.8"
-          fill="#88B772"
-          opacity="0.6"
-          className="node-pulse"
-        >
+
+        <circle cx="190" cy="220" r="5" fill="url(#nodeGradient)">
           <animate
             attributeName="opacity"
-            values="0.3;0.7;0.3"
-            dur="2.8s"
+            values="0.5;0.9;0.5"
+            dur="2.5s"
             repeatCount="indefinite"
             begin="0.5s"
           />
           <animate
             attributeName="r"
-            values="1.3;2.3;1.3"
-            dur="2.8s"
+            values="2;4;2"
+            dur="2.5s"
             repeatCount="indefinite"
             begin="0.5s"
           />
         </circle>
-        <circle
-          cx="200"
-          cy="230"
-          r="2.0"
-          fill="#88B772"
-          opacity="0.65"
-          className="node-pulse"
-        >
+
+        {/* Left Hemisphere - Parietal Lobe */}
+        <circle cx="170" cy="280" r="5.5" fill="url(#nodeGradient)">
           <animate
             attributeName="opacity"
-            values="0.35;0.75;0.35"
-            dur="3.5s"
+            values="0.5;0.9;0.5"
+            dur="2.8s"
             repeatCount="indefinite"
             begin="1s"
           />
           <animate
             attributeName="r"
-            values="1.5;2.5;1.5"
-            dur="3.5s"
+            values="2.5;4.5;2.5"
+            dur="2.8s"
             repeatCount="indefinite"
             begin="1s"
           />
         </circle>
 
-        {/* Left Hemisphere - Parietal Lobe (Top Back) */}
-        <circle
-          cx="280"
-          cy="220"
-          r="1.9"
-          fill="#88B772"
-          opacity="0.6"
-          className="node-pulse"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.3;0.7;0.3"
-            dur="3.1s"
-            repeatCount="indefinite"
-            begin="0.3s"
-          />
-          <animate
-            attributeName="r"
-            values="1.4;2.4;1.4"
-            dur="3.1s"
-            repeatCount="indefinite"
-            begin="0.3s"
-          />
-        </circle>
-        <circle
-          cx="300"
-          cy="250"
-          r="2.1"
-          fill="#88B772"
-          opacity="0.7"
-          className="node-pulse"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.4;0.8;0.4"
-            dur="2.9s"
-            repeatCount="indefinite"
-            begin="0.7s"
-          />
-          <animate
-            attributeName="r"
-            values="1.6;2.6;1.6"
-            dur="2.9s"
-            repeatCount="indefinite"
-            begin="0.7s"
-          />
-        </circle>
-        <circle
-          cx="270"
-          cy="280"
-          r="1.7"
-          fill="#88B772"
-          opacity="0.55"
-          className="node-pulse"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.25;0.65;0.25"
-            dur="3.4s"
-            repeatCount="indefinite"
-            begin="1.2s"
-          />
-          <animate
-            attributeName="r"
-            values="1.2;2.2;1.2"
-            dur="3.4s"
-            repeatCount="indefinite"
-            begin="1.2s"
-          />
-        </circle>
-
-        {/* Left Hemisphere - Temporal Lobe (Side) */}
-        <circle
-          cx="180"
-          cy="320"
-          r="1.8"
-          fill="#88B772"
-          opacity="0.6"
-          className="node-pulse"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.3;0.7;0.3"
-            dur="3.6s"
-            repeatCount="indefinite"
-            begin="1.8s"
-          />
-          <animate
-            attributeName="r"
-            values="1.3;2.3;1.3"
-            dur="3.6s"
-            repeatCount="indefinite"
-            begin="1.8s"
-          />
-        </circle>
-        <circle
-          cx="200"
-          cy="350"
-          r="2.0"
-          fill="#88B772"
-          opacity="0.65"
-          className="node-pulse"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.35;0.75;0.35"
-            dur="3.3s"
-            repeatCount="indefinite"
-            begin="0.4s"
-          />
-          <animate
-            attributeName="r"
-            values="1.5;2.5;1.5"
-            dur="3.3s"
-            repeatCount="indefinite"
-            begin="0.4s"
-          />
-        </circle>
-        <circle
-          cx="160"
-          cy="380"
-          r="1.6"
-          fill="#88B772"
-          opacity="0.55"
-          className="node-pulse"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.25;0.65;0.25"
-            dur="2.5s"
-            repeatCount="indefinite"
-            begin="1.1s"
-          />
-          <animate
-            attributeName="r"
-            values="1.1;2.1;1.1"
-            dur="2.5s"
-            repeatCount="indefinite"
-            begin="1.1s"
-          />
-        </circle>
-
-        {/* Left Hemisphere - Occipital Lobe (Back) */}
-        <circle
-          cx="320"
-          cy="380"
-          r="1.9"
-          fill="#88B772"
-          opacity="0.6"
-          className="node-pulse"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.3;0.7;0.3"
-            dur="3.2s"
-            repeatCount="indefinite"
-            begin="0.6s"
-          />
-          <animate
-            attributeName="r"
-            values="1.4;2.4;1.4"
-            dur="3.2s"
-            repeatCount="indefinite"
-            begin="0.6s"
-          />
-        </circle>
-        <circle
-          cx="290"
-          cy="410"
-          r="2.2"
-          fill="#88B772"
-          opacity="0.65"
-          className="node-pulse"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.35;0.75;0.35"
-            dur="2.8s"
-            repeatCount="indefinite"
-            begin="1.3s"
-          />
-          <animate
-            attributeName="r"
-            values="1.7;2.7;1.7"
-            dur="2.8s"
-            repeatCount="indefinite"
-            begin="1.3s"
-          />
-        </circle>
-
-        {/* Center - Corpus Callosum (Removed to keep text area clean) */}
-
-        {/* Right Hemisphere - Frontal Lobe (Top Front) */}
-        <circle
-          cx="950"
-          cy="180"
-          r="2.2"
-          fill="#88B772"
-          opacity="0.7"
-          className="node-pulse"
-        >
+        <circle cx="130" cy="320" r="4.5" fill="url(#nodeGradient)">
           <animate
             attributeName="opacity"
             values="0.4;0.8;0.4"
             dur="3.2s"
-            repeatCount="indefinite"
-            begin="0.2s"
-          />
-          <animate
-            attributeName="r"
-            values="1.7;2.7;1.7"
-            dur="3.2s"
-            repeatCount="indefinite"
-            begin="0.2s"
-          />
-        </circle>
-        <circle
-          cx="980"
-          cy="200"
-          r="1.8"
-          fill="#88B772"
-          opacity="0.6"
-          className="node-pulse"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.3;0.7;0.3"
-            dur="2.8s"
-            repeatCount="indefinite"
-            begin="0.7s"
-          />
-          <animate
-            attributeName="r"
-            values="1.3;2.3;1.3"
-            dur="2.8s"
-            repeatCount="indefinite"
-            begin="0.7s"
-          />
-        </circle>
-        <circle
-          cx="1000"
-          cy="230"
-          r="2.0"
-          fill="#88B772"
-          opacity="0.65"
-          className="node-pulse"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.35;0.75;0.35"
-            dur="3.5s"
-            repeatCount="indefinite"
-            begin="1.2s"
-          />
-          <animate
-            attributeName="r"
-            values="1.5;2.5;1.5"
-            dur="3.5s"
-            repeatCount="indefinite"
-            begin="1.2s"
-          />
-        </circle>
-
-        {/* Right Hemisphere - Parietal Lobe (Top Back) */}
-        <circle
-          cx="920"
-          cy="220"
-          r="1.9"
-          fill="#88B772"
-          opacity="0.6"
-          className="node-pulse"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.3;0.7;0.3"
-            dur="3.1s"
-            repeatCount="indefinite"
-            begin="0.9s"
-          />
-          <animate
-            attributeName="r"
-            values="1.4;2.4;1.4"
-            dur="3.1s"
-            repeatCount="indefinite"
-            begin="0.9s"
-          />
-        </circle>
-        <circle
-          cx="900"
-          cy="250"
-          r="2.1"
-          fill="#88B772"
-          opacity="0.7"
-          className="node-pulse"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.4;0.8;0.4"
-            dur="2.9s"
-            repeatCount="indefinite"
-            begin="0.3s"
-          />
-          <animate
-            attributeName="r"
-            values="1.6;2.6;1.6"
-            dur="2.9s"
-            repeatCount="indefinite"
-            begin="0.3s"
-          />
-        </circle>
-        <circle
-          cx="930"
-          cy="280"
-          r="1.7"
-          fill="#88B772"
-          opacity="0.55"
-          className="node-pulse"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.25;0.65;0.25"
-            dur="3.4s"
-            repeatCount="indefinite"
-            begin="1.6s"
-          />
-          <animate
-            attributeName="r"
-            values="1.2;2.2;1.2"
-            dur="3.4s"
-            repeatCount="indefinite"
-            begin="1.6s"
-          />
-        </circle>
-
-        {/* Right Hemisphere - Temporal Lobe (Side) */}
-        <circle
-          cx="1020"
-          cy="320"
-          r="1.8"
-          fill="#88B772"
-          opacity="0.6"
-          className="node-pulse"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.3;0.7;0.3"
-            dur="3.6s"
-            repeatCount="indefinite"
-            begin="0.8s"
-          />
-          <animate
-            attributeName="r"
-            values="1.3;2.3;1.3"
-            dur="3.6s"
-            repeatCount="indefinite"
-            begin="0.8s"
-          />
-        </circle>
-        <circle
-          cx="1000"
-          cy="350"
-          r="2.0"
-          fill="#88B772"
-          opacity="0.65"
-          className="node-pulse"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.35;0.75;0.35"
-            dur="3.3s"
-            repeatCount="indefinite"
-            begin="1.4s"
-          />
-          <animate
-            attributeName="r"
-            values="1.5;2.5;1.5"
-            dur="3.3s"
-            repeatCount="indefinite"
-            begin="1.4s"
-          />
-        </circle>
-        <circle
-          cx="1040"
-          cy="380"
-          r="1.6"
-          fill="#88B772"
-          opacity="0.55"
-          className="node-pulse"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.25;0.65;0.25"
-            dur="2.5s"
-            repeatCount="indefinite"
-            begin="0.5s"
-          />
-          <animate
-            attributeName="r"
-            values="1.1;2.1;1.1"
-            dur="2.5s"
-            repeatCount="indefinite"
-            begin="0.5s"
-          />
-        </circle>
-
-        {/* Right Hemisphere - Occipital Lobe (Back) */}
-        <circle
-          cx="880"
-          cy="380"
-          r="1.9"
-          fill="#88B772"
-          opacity="0.6"
-          className="node-pulse"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.3;0.7;0.3"
-            dur="3.2s"
-            repeatCount="indefinite"
-            begin="0.8s"
-          />
-          <animate
-            attributeName="r"
-            values="1.4;2.4;1.4"
-            dur="3.2s"
-            repeatCount="indefinite"
-            begin="0.8s"
-          />
-        </circle>
-        <circle
-          cx="910"
-          cy="410"
-          r="2.2"
-          fill="#88B772"
-          opacity="0.65"
-          className="node-pulse"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.35;0.75;0.35"
-            dur="2.8s"
             repeatCount="indefinite"
             begin="1.5s"
           />
           <animate
             attributeName="r"
-            values="1.7;2.7;1.7"
-            dur="2.8s"
+            values="1.5;3.5;1.5"
+            dur="3.2s"
             repeatCount="indefinite"
             begin="1.5s"
           />
         </circle>
 
-        {/* Brainstem (Removed to clean up bottom area) */}
+        {/* Left Hemisphere - Temporal Lobe */}
+        <circle cx="110" cy="380" r="5" fill="url(#nodeGradient)">
+          <animate
+            attributeName="opacity"
+            values="0.5;0.9;0.5"
+            dur="2.7s"
+            repeatCount="indefinite"
+            begin="0.8s"
+          />
+          <animate
+            attributeName="r"
+            values="2;4;2"
+            dur="2.7s"
+            repeatCount="indefinite"
+            begin="0.8s"
+          />
+        </circle>
 
-        {/* Minimalist Neural Connections - Anatomically accurate */}
-        {/* Left Hemisphere - Frontal to Parietal */}
+        <circle cx="150" cy="420" r="4.5" fill="url(#nodeGradient)">
+          <animate
+            attributeName="opacity"
+            values="0.4;0.8;0.4"
+            dur="3.1s"
+            repeatCount="indefinite"
+            begin="1.2s"
+          />
+          <animate
+            attributeName="r"
+            values="1.5;3.5;1.5"
+            dur="3.1s"
+            repeatCount="indefinite"
+            begin="1.2s"
+          />
+        </circle>
+
+        {/* Left Hemisphere - Occipital Lobe */}
+        <circle cx="190" cy="480" r="5" fill="url(#nodeGradient)">
+          <animate
+            attributeName="opacity"
+            values="0.5;0.9;0.5"
+            dur="2.9s"
+            repeatCount="indefinite"
+            begin="0.3s"
+          />
+          <animate
+            attributeName="r"
+            values="2;4;2"
+            dur="2.9s"
+            repeatCount="indefinite"
+            begin="0.3s"
+          />
+        </circle>
+
+        {/* Left Hemisphere - Additional Bottom Node */}
+        <circle cx="120" cy="520" r="4" fill="url(#nodeGradient)">
+          <animate
+            attributeName="opacity"
+            values="0.4;0.8;0.4"
+            dur="3.3s"
+            repeatCount="indefinite"
+            begin="0.8s"
+          />
+          <animate
+            attributeName="r"
+            values="3;5;3"
+            dur="3.3s"
+            repeatCount="indefinite"
+            begin="0.8s"
+          />
+        </circle>
+
+        {/* Right Hemisphere - Frontal Lobe */}
+        <circle cx="1050" cy="180" r="6" fill="url(#nodeGradient)">
+          <animate
+            attributeName="opacity"
+            values="0.4;0.8;0.4"
+            dur="3s"
+            repeatCount="indefinite"
+            begin="0.2s"
+          />
+          <animate
+            attributeName="r"
+            values="3;5;3"
+            dur="3s"
+            repeatCount="indefinite"
+            begin="0.2s"
+          />
+        </circle>
+
+        <circle cx="1010" cy="220" r="5" fill="url(#nodeGradient)">
+          <animate
+            attributeName="opacity"
+            values="0.5;0.9;0.5"
+            dur="2.5s"
+            repeatCount="indefinite"
+            begin="0.7s"
+          />
+          <animate
+            attributeName="r"
+            values="2;4;2"
+            dur="2.5s"
+            repeatCount="indefinite"
+            begin="0.7s"
+          />
+        </circle>
+
+        {/* Right Hemisphere - Parietal Lobe */}
+        <circle cx="1030" cy="280" r="5.5" fill="url(#nodeGradient)">
+          <animate
+            attributeName="opacity"
+            values="0.5;0.9;0.5"
+            dur="2.8s"
+            repeatCount="indefinite"
+            begin="1.2s"
+          />
+          <animate
+            attributeName="r"
+            values="2.5;4.5;2.5"
+            dur="2.8s"
+            repeatCount="indefinite"
+            begin="1.2s"
+          />
+        </circle>
+
+        <circle cx="1070" cy="320" r="4.5" fill="url(#nodeGradient)">
+          <animate
+            attributeName="opacity"
+            values="0.4;0.8;0.4"
+            dur="3.2s"
+            repeatCount="indefinite"
+            begin="1.7s"
+          />
+          <animate
+            attributeName="r"
+            values="1.5;3.5;1.5"
+            dur="3.2s"
+            repeatCount="indefinite"
+            begin="1.7s"
+          />
+        </circle>
+
+        {/* Right Hemisphere - Temporal Lobe */}
+        <circle cx="1090" cy="380" r="5" fill="url(#nodeGradient)">
+          <animate
+            attributeName="opacity"
+            values="0.5;0.9;0.5"
+            dur="2.7s"
+            repeatCount="indefinite"
+            begin="1s"
+          />
+          <animate
+            attributeName="r"
+            values="2;4;2"
+            dur="2.7s"
+            repeatCount="indefinite"
+            begin="1s"
+          />
+        </circle>
+
+        <circle cx="1050" cy="420" r="4.5" fill="url(#nodeGradient)">
+          <animate
+            attributeName="opacity"
+            values="0.4;0.8;0.4"
+            dur="3.1s"
+            repeatCount="indefinite"
+            begin="1.4s"
+          />
+          <animate
+            attributeName="r"
+            values="1.5;3.5;1.5"
+            dur="3.1s"
+            repeatCount="indefinite"
+            begin="1.4s"
+          />
+        </circle>
+
+        {/* Right Hemisphere - Occipital Lobe */}
+        <circle cx="1010" cy="480" r="5" fill="url(#nodeGradient)">
+          <animate
+            attributeName="opacity"
+            values="0.5;0.9;0.5"
+            dur="2.9s"
+            repeatCount="indefinite"
+            begin="0.5s"
+          />
+          <animate
+            attributeName="r"
+            values="2;4;2"
+            dur="2.9s"
+            repeatCount="indefinite"
+            begin="0.5s"
+          />
+        </circle>
+
+        {/* Right Hemisphere - Additional Bottom Node */}
+        <circle cx="1080" cy="520" r="4" fill="url(#nodeGradient)">
+          <animate
+            attributeName="opacity"
+            values="0.4;0.8;0.4"
+            dur="3.3s"
+            repeatCount="indefinite"
+            begin="1.2s"
+          />
+          <animate
+            attributeName="r"
+            values="3;5;3"
+            dur="3.3s"
+            repeatCount="indefinite"
+            begin="1.2s"
+          />
+        </circle>
+
+        {/* Neural Connections - Left Hemisphere */}
         <line
-          x1="250"
+          x1="150"
           y1="180"
-          x2="220"
-          y2="200"
-          stroke="#88B772"
-          strokeWidth="1.3"
-          opacity="0.5"
-          className="connection-pulse"
+          x2="190"
+          y2="220"
+          stroke="url(#connectionGradient)"
+          strokeWidth="2.5"
         >
           <animate
             attributeName="opacity"
-            values="0.3;0.6;0.3"
-            dur="3.2s"
+            values="0.2;0.6;0.2"
+            dur="3s"
             repeatCount="indefinite"
           />
         </line>
+
         <line
-          x1="220"
-          y1="200"
-          x2="200"
-          y2="230"
-          stroke="#88B772"
-          strokeWidth="1.2"
-          opacity="0.45"
-          className="connection-pulse"
+          x1="190"
+          y1="220"
+          x2="170"
+          y2="280"
+          stroke="url(#connectionGradient)"
+          strokeWidth="2.0"
         >
           <animate
             attributeName="opacity"
-            values="0.25;0.55;0.25"
+            values="0.2;0.5;0.2"
             dur="2.8s"
             repeatCount="indefinite"
             begin="0.5s"
           />
         </line>
+
         <line
-          x1="280"
-          y1="220"
-          x2="300"
-          y2="250"
-          stroke="#88B772"
-          strokeWidth="1.4"
-          opacity="0.55"
-          className="connection-pulse"
+          x1="170"
+          y1="280"
+          x2="130"
+          y2="320"
+          stroke="url(#connectionGradient)"
+          strokeWidth="1.5"
         >
           <animate
             attributeName="opacity"
-            values="0.35;0.65;0.35"
-            dur="3.1s"
+            values="0.2;0.5;0.2"
+            dur="3.2s"
             repeatCount="indefinite"
-            begin="0.3s"
+            begin="1s"
           />
         </line>
+
         <line
-          x1="300"
-          y1="250"
-          x2="270"
-          y2="280"
-          stroke="#88B772"
-          strokeWidth="1.1"
-          opacity="0.4"
-          className="connection-pulse"
+          x1="130"
+          y1="320"
+          x2="110"
+          y2="380"
+          stroke="url(#connectionGradient)"
+          strokeWidth="2.0"
+        >
+          <animate
+            attributeName="opacity"
+            values="0.2;0.5;0.2"
+            dur="2.7s"
+            repeatCount="indefinite"
+            begin="1.5s"
+          />
+        </line>
+
+        <line
+          x1="110"
+          y1="380"
+          x2="150"
+          y2="420"
+          stroke="url(#connectionGradient)"
+          strokeWidth="1.5"
+        >
+          <animate
+            attributeName="opacity"
+            values="0.2;0.5;0.2"
+            dur="3.1s"
+            repeatCount="indefinite"
+            begin="0.8s"
+          />
+        </line>
+
+        <line
+          x1="150"
+          y1="420"
+          x2="190"
+          y2="480"
+          stroke="url(#connectionGradient)"
+          strokeWidth="2.0"
         >
           <animate
             attributeName="opacity"
             values="0.2;0.5;0.2"
             dur="2.9s"
             repeatCount="indefinite"
-            begin="0.7s"
-          />
-        </line>
-
-        {/* Left Hemisphere - Frontal to Temporal */}
-        <line
-          x1="200"
-          y1="230"
-          x2="180"
-          y2="320"
-          stroke="#88B772"
-          strokeWidth="1.0"
-          opacity="0.35"
-          className="connection-pulse"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.15;0.45;0.15"
-            dur="3.5s"
-            repeatCount="indefinite"
-            begin="1s"
-          />
-        </line>
-        <line
-          x1="180"
-          y1="320"
-          x2="200"
-          y2="350"
-          stroke="#88B772"
-          strokeWidth="1.3"
-          opacity="0.5"
-          className="connection-pulse"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.3;0.6;0.3"
-            dur="3.6s"
-            repeatCount="indefinite"
-            begin="1.8s"
-          />
-        </line>
-        <line
-          x1="200"
-          y1="350"
-          x2="160"
-          y2="380"
-          stroke="#88B772"
-          strokeWidth="1.1"
-          opacity="0.4"
-          className="connection-pulse"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.2;0.5;0.2"
-            dur="3.3s"
-            repeatCount="indefinite"
-            begin="0.4s"
-          />
-        </line>
-
-        {/* Left Hemisphere - Parietal to Occipital */}
-        <line
-          x1="270"
-          y1="280"
-          x2="320"
-          y2="380"
-          stroke="#88B772"
-          strokeWidth="1.2"
-          opacity="0.45"
-          className="connection-pulse"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.25;0.55;0.25"
-            dur="3.4s"
-            repeatCount="indefinite"
             begin="1.2s"
           />
         </line>
+
+        {/* Connection to additional bottom node */}
         <line
-          x1="320"
-          y1="380"
-          x2="290"
-          y2="410"
-          stroke="#88B772"
-          strokeWidth="1.3"
-          opacity="0.5"
-          className="connection-pulse"
+          x1="190"
+          y1="480"
+          x2="120"
+          y2="520"
+          stroke="url(#connectionGradient)"
+          strokeWidth="1.5"
         >
           <animate
             attributeName="opacity"
-            values="0.3;0.6;0.3"
-            dur="3.2s"
+            values="0.2;0.4;0.2"
+            dur="3.3s"
             repeatCount="indefinite"
-            begin="0.6s"
+            begin="0.8s"
           />
         </line>
 
-        {/* Center - Corpus Callosum (Removed to keep text area clean) */}
-
-        {/* Right Hemisphere - Frontal to Parietal */}
+        {/* Neural Connections - Right Hemisphere */}
         <line
-          x1="950"
+          x1="1050"
           y1="180"
-          x2="980"
-          y2="200"
-          stroke="#88B772"
-          strokeWidth="1.3"
-          opacity="0.5"
-          className="connection-pulse"
+          x2="1010"
+          y2="220"
+          stroke="url(#connectionGradient)"
+          strokeWidth="2.5"
         >
           <animate
             attributeName="opacity"
-            values="0.3;0.6;0.3"
-            dur="3.2s"
+            values="0.2;0.6;0.2"
+            dur="3s"
             repeatCount="indefinite"
             begin="0.2s"
           />
         </line>
+
         <line
-          x1="980"
-          y1="200"
-          x2="1000"
-          y2="230"
-          stroke="#88B772"
-          strokeWidth="1.2"
-          opacity="0.45"
-          className="connection-pulse"
+          x1="1010"
+          y1="220"
+          x2="1030"
+          y2="280"
+          stroke="url(#connectionGradient)"
+          strokeWidth="2.0"
         >
           <animate
             attributeName="opacity"
-            values="0.25;0.55;0.25"
+            values="0.2;0.5;0.2"
             dur="2.8s"
             repeatCount="indefinite"
             begin="0.7s"
           />
         </line>
+
         <line
-          x1="920"
-          y1="220"
-          x2="900"
-          y2="250"
-          stroke="#88B772"
-          strokeWidth="1.4"
-          opacity="0.55"
-          className="connection-pulse"
+          x1="1030"
+          y1="280"
+          x2="1070"
+          y2="320"
+          stroke="url(#connectionGradient)"
+          strokeWidth="1.5"
         >
           <animate
             attributeName="opacity"
-            values="0.35;0.65;0.35"
-            dur="3.1s"
+            values="0.2;0.5;0.2"
+            dur="3.2s"
             repeatCount="indefinite"
-            begin="0.9s"
+            begin="1.2s"
           />
         </line>
+
         <line
-          x1="900"
-          y1="250"
-          x2="930"
-          y2="280"
-          stroke="#88B772"
-          strokeWidth="1.1"
-          opacity="0.4"
-          className="connection-pulse"
+          x1="1070"
+          y1="320"
+          x2="1090"
+          y2="380"
+          stroke="url(#connectionGradient)"
+          strokeWidth="2.0"
+        >
+          <animate
+            attributeName="opacity"
+            values="0.2;0.5;0.2"
+            dur="2.7s"
+            repeatCount="indefinite"
+            begin="1.7s"
+          />
+        </line>
+
+        <line
+          x1="1090"
+          y1="380"
+          x2="1050"
+          y2="420"
+          stroke="url(#connectionGradient)"
+          strokeWidth="1.5"
+        >
+          <animate
+            attributeName="opacity"
+            values="0.2;0.5;0.2"
+            dur="3.1s"
+            repeatCount="indefinite"
+            begin="1s"
+          />
+        </line>
+
+        <line
+          x1="1050"
+          y1="420"
+          x2="1010"
+          y2="480"
+          stroke="url(#connectionGradient)"
+          strokeWidth="2.0"
         >
           <animate
             attributeName="opacity"
             values="0.2;0.5;0.2"
             dur="2.9s"
             repeatCount="indefinite"
-            begin="0.3s"
-          />
-        </line>
-
-        {/* Right Hemisphere - Frontal to Temporal */}
-        <line
-          x1="1000"
-          y1="230"
-          x2="1020"
-          y2="320"
-          stroke="#88B772"
-          strokeWidth="1.0"
-          opacity="0.35"
-          className="connection-pulse"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.15;0.45;0.15"
-            dur="3.5s"
-            repeatCount="indefinite"
-            begin="1.2s"
-          />
-        </line>
-        <line
-          x1="1020"
-          y1="320"
-          x2="1000"
-          y2="350"
-          stroke="#88B772"
-          strokeWidth="1.3"
-          opacity="0.5"
-          className="connection-pulse"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.3;0.6;0.3"
-            dur="3.6s"
-            repeatCount="indefinite"
-            begin="0.8s"
-          />
-        </line>
-        <line
-          x1="1000"
-          y1="350"
-          x2="1040"
-          y2="380"
-          stroke="#88B772"
-          strokeWidth="1.1"
-          opacity="0.4"
-          className="connection-pulse"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.2;0.5;0.2"
-            dur="3.3s"
-            repeatCount="indefinite"
             begin="1.4s"
           />
         </line>
 
-        {/* Right Hemisphere - Parietal to Occipital */}
+        {/* Connection to additional bottom node */}
         <line
-          x1="930"
-          y1="280"
-          x2="880"
-          y2="380"
-          stroke="#88B772"
+          x1="1010"
+          y1="480"
+          x2="1080"
+          y2="520"
+          stroke="url(#connectionGradient)"
+          strokeWidth="1.5"
+        >
+          <animate
+            attributeName="opacity"
+            values="0.2;0.4;0.2"
+            dur="3.3s"
+            repeatCount="indefinite"
+            begin="1.2s"
+          />
+        </line>
+
+        {/* Cross-hemisphere Connections */}
+        <line
+          x1="190"
+          y1="220"
+          x2="1010"
+          y2="220"
+          stroke="url(#connectionGradient)"
           strokeWidth="1.2"
-          opacity="0.45"
-          className="connection-pulse"
         >
           <animate
             attributeName="opacity"
-            values="0.25;0.55;0.25"
-            dur="3.4s"
+            values="0.1;0.4;0.1"
+            dur="4s"
             repeatCount="indefinite"
-            begin="1.6s"
+            begin="1s"
           />
         </line>
+
         <line
-          x1="880"
-          y1="380"
-          x2="910"
-          y2="410"
-          stroke="#88B772"
-          strokeWidth="1.3"
-          opacity="0.5"
-          className="connection-pulse"
+          x1="170"
+          y1="280"
+          x2="1030"
+          y2="280"
+          stroke="url(#connectionGradient)"
+          strokeWidth="1.2"
         >
           <animate
             attributeName="opacity"
-            values="0.3;0.6;0.3"
-            dur="3.2s"
+            values="0.1;0.4;0.1"
+            dur="4s"
             repeatCount="indefinite"
-            begin="0.8s"
+            begin="1.5s"
           />
         </line>
 
-        {/* Cross-hemisphere Connections - Removed to keep text area clean */}
-
-        {/* Brainstem Connection (Removed to keep text area clean) */}
-        {/* Brainstem connection (Removed to clean up bottom area) */}
-
-        {/* Signal Bursts - Following realistic neural pathways */}
-        <circle
-          r="1.5"
-          fill="url(#signalGradient)"
-          opacity="0.8"
-          className="signal-burst"
+        <line
+          x1="110"
+          y1="380"
+          x2="1090"
+          y2="380"
+          stroke="url(#connectionGradient)"
+          strokeWidth="1.2"
         >
-          <animateMotion dur="4s" repeatCount="indefinite" begin="0s">
+          <animate
+            attributeName="opacity"
+            values="0.1;0.4;0.1"
+            dur="4s"
+            repeatCount="indefinite"
+            begin="2s"
+          />
+        </line>
+
+        {/* Subtle Signal Bursts */}
+        <circle r="2" fill="url(#nodeGradient)" opacity="0.6">
+          <animateMotion dur="6s" repeatCount="indefinite" begin="0s">
             <mpath href="#signalPath1" />
           </animateMotion>
           <animate
             attributeName="opacity"
-            values="0;0.8;0"
-            dur="4s"
+            values="0;0.6;0"
+            dur="6s"
             repeatCount="indefinite"
             begin="0s"
           />
         </circle>
 
-        <circle
-          r="1.2"
-          fill="url(#signalGradient)"
-          opacity="0.7"
-          className="signal-burst"
-        >
-          <animateMotion dur="3.5s" repeatCount="indefinite" begin="1.5s">
+        <circle r="1.5" fill="url(#nodeGradient)" opacity="0.5">
+          <animateMotion dur="5s" repeatCount="indefinite" begin="2s">
             <mpath href="#signalPath2" />
           </animateMotion>
           <animate
             attributeName="opacity"
-            values="0;0.7;0"
-            dur="3.5s"
+            values="0;0.5;0"
+            dur="5s"
             repeatCount="indefinite"
-            begin="1.5s"
+            begin="2s"
           />
         </circle>
 
-        {/* Signal burst 3 (Removed to clean up bottom area) */}
-
-        {/* Signal Paths - Following anatomically accurate brain pathways */}
+        {/* Signal Paths */}
         <path
           id="signalPath1"
-          d="M 250 180 L 220 200 L 200 230 L 180 320 L 200 350 L 160 380"
+          d="M 150 180 L 190 220 L 170 280 L 130 320 L 110 380 L 150 420 L 190 480 L 120 520"
           fill="none"
         />
         <path
           id="signalPath2"
-          d="M 950 180 L 980 200 L 1000 230 L 1020 320 L 1000 350 L 1040 380"
+          d="M 1050 180 L 1010 220 L 1030 280 L 1070 320 L 1090 380 L 1050 420 L 1010 480 L 1080 520"
           fill="none"
         />
-        {/* Signal path 3 (Removed to clean up bottom area) */}
       </svg>
     </div>
   );

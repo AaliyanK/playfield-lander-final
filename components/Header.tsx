@@ -7,6 +7,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
   const [isLogoHovered, setIsLogoHovered] = useState(false);
+  const [isTalkToUsHovered, setIsTalkToUsHovered] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,14 +25,6 @@ export default function Header() {
 
   return (
     <>
-      {/* Page blur overlay */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isLogoHovered ? 1 : 0 }}
-        transition={{ duration: 0.3 }}
-        className="fixed inset-0 bg-veil backdrop-blur-sm z-40 pointer-events-none"
-      />
-
       <motion.header
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -50,7 +43,7 @@ export default function Header() {
               onMouseLeave={() => setIsLogoHovered(false)}
             >
               <div
-                className="text-xl font-serif text-ink transition-colors duration-300"
+                className="text-xl font-saans text-ink transition-colors duration-300"
                 style={{ fontWeight: "300" }}
               >
                 Playfield
@@ -123,10 +116,10 @@ export default function Header() {
                   href={item.href}
                   onMouseEnter={() => setHoveredItem(index)}
                   onMouseLeave={() => setHoveredItem(null)}
-                  className={`text-body-m transition-all duration-300 relative ${
+                  className={`text-saans-body transition-all duration-300 relative ${
                     hoveredItem === index
                       ? "text-accent"
-                      : hoveredItem !== null
+                      : hoveredItem !== null || isTalkToUsHovered
                       ? "text-ink/30 blur-sm"
                       : "text-ink"
                   }`}
@@ -158,16 +151,82 @@ export default function Header() {
                   contactSection.scrollIntoView({ behavior: "smooth" });
                 }
               }}
-              className="relative group"
+              onMouseEnter={() => setIsTalkToUsHovered(true)}
+              onMouseLeave={() => setIsTalkToUsHovered(false)}
+              className="relative group transition-all duration-300"
               style={{ outline: "none" }}
             >
               <div className="flex items-center space-x-2">
                 <div className="flex space-x-1">
-                  <div className="w-1 h-1 bg-accent rounded-full"></div>
-                  <div className="w-1 h-1 bg-accent rounded-full"></div>
-                  <div className="w-1 h-1 bg-accent rounded-full"></div>
-                  <div className="w-1 h-1 bg-accent rounded-full"></div>
-                  <div className="w-1 h-1 bg-accent rounded-full"></div>
+                  <motion.div
+                    className="w-1 h-1 bg-accent rounded-full"
+                    animate={{
+                      y: isTalkToUsHovered ? [-2, -8, -2] : 0,
+                      scale: isTalkToUsHovered ? [1, 1.2, 1] : 1,
+                    }}
+                    transition={{
+                      duration: 0.6,
+                      repeat: isTalkToUsHovered ? Infinity : 0,
+                      repeatType: "loop",
+                      ease: "easeInOut",
+                    }}
+                  />
+                  <motion.div
+                    className="w-1 h-1 bg-accent rounded-full"
+                    animate={{
+                      y: isTalkToUsHovered ? [-2, -8, -2] : 0,
+                      scale: isTalkToUsHovered ? [1, 1.2, 1] : 1,
+                    }}
+                    transition={{
+                      duration: 0.6,
+                      repeat: isTalkToUsHovered ? Infinity : 0,
+                      repeatType: "loop",
+                      ease: "easeInOut",
+                      delay: 0.1,
+                    }}
+                  />
+                  <motion.div
+                    className="w-1 h-1 bg-accent rounded-full"
+                    animate={{
+                      y: isTalkToUsHovered ? [-2, -8, -2] : 0,
+                      scale: isTalkToUsHovered ? [1, 1.2, 1] : 1,
+                    }}
+                    transition={{
+                      duration: 0.6,
+                      repeat: isTalkToUsHovered ? Infinity : 0,
+                      repeatType: "loop",
+                      ease: "easeInOut",
+                      delay: 0.2,
+                    }}
+                  />
+                  <motion.div
+                    className="w-1 h-1 bg-accent rounded-full"
+                    animate={{
+                      y: isTalkToUsHovered ? [-2, -8, -2] : 0,
+                      scale: isTalkToUsHovered ? [1, 1.2, 1] : 1,
+                    }}
+                    transition={{
+                      duration: 0.6,
+                      repeat: isTalkToUsHovered ? Infinity : 0,
+                      repeatType: "loop",
+                      ease: "easeInOut",
+                      delay: 0.3,
+                    }}
+                  />
+                  <motion.div
+                    className="w-1 h-1 bg-accent rounded-full"
+                    animate={{
+                      y: isTalkToUsHovered ? [-2, -8, -2] : 0,
+                      scale: isTalkToUsHovered ? [1, 1.2, 1] : 1,
+                    }}
+                    transition={{
+                      duration: 0.6,
+                      repeat: isTalkToUsHovered ? Infinity : 0,
+                      repeatType: "loop",
+                      ease: "easeInOut",
+                      delay: 0.4,
+                    }}
+                  />
                 </div>
                 <div className="w-2 h-0.5 bg-accent"></div>
                 <span className="text-caption-s text-accent font-medium group-hover:underline">
