@@ -24,7 +24,7 @@ export default function Sidebar({ onNavHover, topBarHovered }: SidebarProps) {
 
   // Scroll tracking to highlight active section
   useEffect(() => {
-    const sections = navItems.map((item) => document.querySelector(item.href));
+    const sections = navItems.map((item) => document.querySelector(item.href) as HTMLElement | null);
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 200; // Increased offset for better UX
@@ -39,7 +39,7 @@ export default function Sidebar({ onNavHover, topBarHovered }: SidebarProps) {
           const sectionHeight = section.offsetHeight;
           const sectionCenter = sectionTop + sectionHeight / 2;
           const distance = Math.abs(scrollPosition - sectionCenter);
-
+          
           if (distance < minDistance) {
             minDistance = distance;
             activeIndex = index;
