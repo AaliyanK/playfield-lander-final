@@ -24,7 +24,9 @@ export default function Sidebar({ onNavHover, topBarHovered }: SidebarProps) {
 
   // Scroll tracking to highlight active section
   useEffect(() => {
-    const sections = navItems.map((item) => document.querySelector(item.href) as HTMLElement | null);
+    const sections = navItems.map(
+      (item) => document.querySelector(item.href) as HTMLElement | null
+    );
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 200; // Increased offset for better UX
@@ -39,7 +41,7 @@ export default function Sidebar({ onNavHover, topBarHovered }: SidebarProps) {
           const sectionHeight = section.offsetHeight;
           const sectionCenter = sectionTop + sectionHeight / 2;
           const distance = Math.abs(scrollPosition - sectionCenter);
-          
+
           if (distance < minDistance) {
             minDistance = distance;
             activeIndex = index;
@@ -66,7 +68,12 @@ export default function Sidebar({ onNavHover, topBarHovered }: SidebarProps) {
   ];
 
   return (
-    <aside className="fixed left-0 top-0 h-full w-64 bg-paper border-r border-rule z-50 flex flex-col">
+    <motion.aside
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      className="fixed left-0 top-0 h-full w-64 bg-paper border-r border-rule z-50 flex flex-col"
+    >
       {/* Spacer to push navigation to bottom */}
       <div className="flex-1"></div>
 
@@ -74,7 +81,16 @@ export default function Sidebar({ onNavHover, topBarHovered }: SidebarProps) {
       <nav className="p-6">
         <ul className="space-y-4">
           {navItems.map((item, index) => (
-            <li key={item.label}>
+            <motion.li
+              key={item.label}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 0.6,
+                ease: [0.16, 1, 0.3, 1],
+                delay: 0.3 + index * 0.1,
+              }}
+            >
               <a
                 href={item.href}
                 onMouseEnter={() => handleMouseEnter(index)}
@@ -111,10 +127,10 @@ export default function Sidebar({ onNavHover, topBarHovered }: SidebarProps) {
                 />
                 <span>{item.label}</span>
               </a>
-            </li>
+            </motion.li>
           ))}
         </ul>
       </nav>
-    </aside>
+    </motion.aside>
   );
 }

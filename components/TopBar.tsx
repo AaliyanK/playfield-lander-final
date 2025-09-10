@@ -17,14 +17,24 @@ export default function TopBar({ hoveredNavItem, onTopBarHover }: TopBarProps) {
   };
 
   return (
-    <header
+    <motion.header
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
       className="fixed top-0 right-0 left-64 bg-paper z-40"
       onMouseEnter={() => handleTopBarHover(true)}
       onMouseLeave={() => handleTopBarHover(false)}
     >
       <div className="flex justify-between items-center h-16 px-6">
         {/* Playfield Logo */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.6,
+            ease: [0.25, 0.1, 0.25, 1],
+            delay: 0.2,
+          }}
           className={`relative cursor-pointer transition-all duration-300 ${
             hoveredNavItem !== null ? "blur-sm" : ""
           }`}
@@ -107,10 +117,17 @@ export default function TopBar({ hoveredNavItem, onTopBarHover }: TopBarProps) {
               }}
             />
           </div>
-        </div>
+        </motion.div>
 
         {/* Talk to Us Button */}
-        <button
+        <motion.button
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.6,
+            ease: [0.25, 0.1, 0.25, 1],
+            delay: 0.3,
+          }}
           onClick={() => {
             const contactSection = document.getElementById("contact");
             if (contactSection) {
@@ -201,8 +218,8 @@ export default function TopBar({ hoveredNavItem, onTopBarHover }: TopBarProps) {
               TALK TO US
             </span>
           </div>
-        </button>
+        </motion.button>
       </div>
-    </header>
+    </motion.header>
   );
 }
