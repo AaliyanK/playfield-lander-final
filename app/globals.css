@@ -1,0 +1,135 @@
+/* Custom fonts loaded via Next.js localFont */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans;
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(0, 0, 0, 0.02) 1px,
+      transparent 0
+    );
+    background-size: 20px 20px;
+  }
+
+  * {
+    @apply border-rule;
+  }
+}
+
+@layer components {
+  .grain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(0, 0, 0, 0.01) 1px,
+      transparent 0
+    );
+    background-size: 2px 2px;
+    opacity: 0.3;
+    z-index: 1;
+  }
+
+  .section-reveal {
+    @apply animate-fade-up;
+  }
+
+  .card-elevation {
+    @apply bg-paper border border-rule shadow-soft rounded-xl;
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-paper;
+  }
+
+  .btn-primary {
+    @apply bg-ink text-paper px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-inkSoft focus-ring;
+  }
+
+  .btn-secondary {
+    @apply border border-ink text-ink px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-ink hover:text-paper focus-ring;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-ink px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-accent/90 focus-ring;
+  }
+
+  .text-display-xl {
+    @apply font-serif;
+    font-weight: 300;
+    font-size: 4rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .text-display-l {
+    @apply font-serif;
+    font-weight: 300;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  .text-body-m {
+    @apply font-sans;
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+
+  .text-caption-s {
+    @apply font-sans;
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+
+  .rule-line {
+    @apply border-t border-rule;
+  }
+
+  .accent-rule {
+    @apply border-t-2 border-accent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  .hover\\:pause-animation:hover {
+    animation-play-state: paused;
+  }
+}
