@@ -8,7 +8,7 @@ export default function Vision() {
       {/* Foundations Section */}
       <section
         id="foundations"
-        className="pt-12 pb-12 bg-gradient-to-b from-accent/3 to-paper"
+        className="pt-6 pb-6 bg-gradient-to-b from-accent/3 to-paper"
       >
         <div className="max-w-4xl mx-auto px-4 md:px-6 text-left">
           <motion.div
@@ -103,7 +103,7 @@ export default function Vision() {
       {/* Specialization Section */}
       <section
         id="specialization"
-        className="py-12 bg-gradient-to-b from-paper to-accent/3"
+        className="py-6 bg-gradient-to-b from-paper to-accent/3"
       >
         <div className="max-w-4xl mx-auto px-4 md:px-6 text-left">
           <motion.div
@@ -194,7 +194,7 @@ export default function Vision() {
       {/* Security Section */}
       <section
         id="security"
-        className="py-12 bg-gradient-to-b from-accent/3 to-paper"
+        className="py-6 bg-gradient-to-b from-accent/3 to-paper"
       >
         <div className="max-w-4xl mx-auto px-4 md:px-6 text-left">
           <motion.div
@@ -232,7 +232,7 @@ export default function Vision() {
       </section>
 
       {/* Today Section */}
-      <section id="today" className="py-12 pb-24 bg-paper">
+      <section id="today" className="py-6 pb-6 bg-paper">
         <div className="max-w-4xl mx-auto px-4 md:px-6 text-left">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
