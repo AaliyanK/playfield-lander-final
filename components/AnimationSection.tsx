@@ -9,10 +9,7 @@ export default function AnimationSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section
-      ref={ref}
-      className="relative w-full min-h-[40vh] bg-paper border-b border-t border-rule"
-    >
+    <section ref={ref} className="relative w-full min-h-[40vh] bg-paper">
       <div className="w-full h-full flex items-center justify-center">
         {/* Placeholder for your animation/image content */}
         <div className="w-full max-w-7xl mx-auto px-6 py-8">

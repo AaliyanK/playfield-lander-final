@@ -8,34 +8,34 @@ import GlyphPulse from "./visuals/GlyphPulse";
 
 export default function ValueProps() {
   const valueProps = [
-    {
-      headline: "One interface over your tools",
-      description:
-        "Search, summarize, and act across email, docs, tickets, and databases—without leaving one place.",
-      visual: <GlyphStacks />,
-      reverse: false,
-    },
-    {
-      headline: "Configured to your business",
-      description:
-        "Every enterprise is unique. We adapt to your policies, controls, and workflows.",
-      visual: <GlyphNetwork />,
-      reverse: true,
-    },
-    {
-      headline: "Operational confidence",
-      description:
-        "Policies, approvals, and receipts built-in—so changes stick and audits are easy.",
-      visual: <GlyphShield />,
-      reverse: false,
-    },
-    {
-      headline: "Measurable impact",
-      description:
-        "Shorter cycle times, lower backlog, fewer escalations—tracked from day one.",
-      visual: <GlyphPulse />,
-      reverse: true,
-    },
+    // {
+    //   headline: "One interface over your tools",
+    //   description:
+    //     "Search, summarize, and act across email, docs, tickets, and databases—without leaving one place.",
+    //   visual: <GlyphStacks />,
+    //   reverse: false,
+    // },
+    // {
+    //   headline: "Configured to your business",
+    //   description:
+    //     "Every enterprise is unique. We adapt to your policies, controls, and workflows.",
+    //   visual: <GlyphNetwork />,
+    //   reverse: true,
+    // },
+    // {
+    //   headline: "Operational confidence",
+    //   description:
+    //     "Policies, approvals, and receipts built-in—so changes stick and audits are easy.",
+    //   visual: <GlyphShield />,
+    //   reverse: false,
+    // },
+    // {
+    //   headline: "Measurable impact",
+    //   description:
+    //     "Shorter cycle times, lower backlog, fewer escalations—tracked from day one.",
+    //   visual: <GlyphPulse />,
+    //   reverse: true,
+    // },
   ];
 
   return (

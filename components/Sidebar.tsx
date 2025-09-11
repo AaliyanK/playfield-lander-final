@@ -12,6 +12,15 @@ export default function Sidebar({ onNavHover, topBarHovered }: SidebarProps) {
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
   const [activeSection, setActiveSection] = useState<number>(0);
 
+  const navItems = [
+    { label: "Playfield", href: "#home" },
+    { label: "Introduction", href: "#introduction" },
+    { label: "Foundations", href: "#foundations" },
+    { label: "Specialization", href: "#specialization" },
+    { label: "Security", href: "#security" },
+    { label: "Today", href: "#today" },
+  ];
+
   const handleMouseEnter = (index: number) => {
     setHoveredItem(index);
     onNavHover?.(index);
@@ -24,55 +33,47 @@ export default function Sidebar({ onNavHover, topBarHovered }: SidebarProps) {
 
   // Scroll tracking to highlight active section
   useEffect(() => {
-    const sections = navItems.map(
-      (item) => document.querySelector(item.href) as HTMLElement | null
-    );
-
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 200; // Increased offset for better UX
+      const scrollPosition = window.scrollY + 150;
+      const sections = navItems.map(
+        (item) => document.querySelector(item.href) as HTMLElement | null
+      );
 
       // Find the section that's most in view
       let activeIndex = 0;
-      let minDistance = Infinity;
 
-      sections.forEach((section, index) => {
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
         if (section) {
           const sectionTop = section.offsetTop;
-          const sectionHeight = section.offsetHeight;
-          const sectionCenter = sectionTop + sectionHeight / 2;
-          const distance = Math.abs(scrollPosition - sectionCenter);
-
-          if (distance < minDistance) {
-            minDistance = distance;
-            activeIndex = index;
+          if (scrollPosition >= sectionTop) {
+            activeIndex = i;
+            break;
           }
         }
-      });
+      }
 
       setActiveSection(activeIndex);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check initial position
+    // Add a small delay to ensure DOM is ready
+    const timeoutId = setTimeout(() => {
+      window.addEventListener("scroll", handleScroll);
+      handleScroll(); // Check initial position
+    }, 200);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
-
-  const navItems = [
-    { label: "Playfield", href: "#home" },
-    { label: "Vision", href: "#vision" },
-    { label: "Product", href: "#product" },
-    { label: "Integrations", href: "#integrations" },
-    { label: "Security", href: "#security" },
-    { label: "Contact", href: "#contact" },
-  ];
 
   return (
     <motion.aside
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed left-0 top-0 h-full w-64 bg-paper border-r border-rule z-50 flex flex-col"
+      className="fixed left-0 top-0 h-full w-64 lg:w-80 bg-paper border-r border-rule z-50 hidden md:flex flex-col"
     >
       {/* Spacer to push navigation to bottom */}
       <div className="flex-1"></div>
