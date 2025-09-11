@@ -1,13 +1,21 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
 import GlyphStacks from "./visuals/GlyphStacks";
 import GlyphNetwork from "./visuals/GlyphNetwork";
 import GlyphShield from "./visuals/GlyphShield";
 import GlyphPulse from "./visuals/GlyphPulse";
 
+interface ValueProp {
+  headline: string;
+  description: string;
+  visual: React.ReactNode;
+  reverse: boolean;
+}
+
 export default function ValueProps() {
-  const valueProps = [
+  const valueProps: ValueProp[] = [
     // {
     //   headline: "One interface over your tools",
     //   description:
