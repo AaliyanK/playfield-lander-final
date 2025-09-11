@@ -14,7 +14,6 @@ export default function Sidebar({ onNavHover, topBarHovered }: SidebarProps) {
 
   const navItems = [
     { label: "Playfield", href: "#home" },
-    { label: "Introduction", href: "#introduction" },
     { label: "Foundations", href: "#foundations" },
     { label: "Specialization", href: "#specialization" },
     { label: "Security", href: "#security" },
@@ -113,7 +112,7 @@ export default function Sidebar({ onNavHover, topBarHovered }: SidebarProps) {
                     backgroundColor:
                       activeSection === index || hoveredItem === index
                         ? "#88B772"
-                        : "transparent",
+                        : "rgba(0, 0, 0, 0)",
                     borderColor: "#88B772",
                     borderWidth:
                       activeSection === index || hoveredItem === index

@@ -28,7 +28,6 @@ export default function Home() {
 
   const navItems = [
     { label: "Playfield", href: "#home" },
-    { label: "Introduction", href: "#introduction" },
     { label: "Foundations", href: "#foundations" },
     { label: "Specialization", href: "#specialization" },
     { label: "Security", href: "#security" },

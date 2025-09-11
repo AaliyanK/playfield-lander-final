@@ -5,63 +5,12 @@ import { motion } from "framer-motion";
 export default function Vision() {
   return (
     <>
-      {/* Introduction Section */}
-      <section
-        id="introduction"
-        className="py-12 bg-gradient-to-b from-paper to-accent/3"
-      >
-        <div className="max-w-4xl mx-auto px-6 text-left">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            viewport={{ once: true }}
-            className="space-y-6"
-          >
-            <div className="space-y-6 text-left max-w-3xl">
-              <motion.p
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.8,
-                  ease: [0.16, 1, 0.3, 1],
-                  delay: 0.2,
-                }}
-                viewport={{ once: true }}
-                className="text-saans-body"
-              >
-                We're announcing Playfield. We're building for a future where
-                enterprises transition from operating through human interfaces
-                to delegating tasks to agents end-to-end. For this to happen, we
-                believe that the entire world of B2B software needs to be
-                re-built for agents to interact with, rather than for humans.
-              </motion.p>
-              <motion.p
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.8,
-                  ease: [0.16, 1, 0.3, 1],
-                  delay: 0.4,
-                }}
-                viewport={{ once: true }}
-                className="text-saans-body"
-              >
-                We're working with our customers directly to rebuild their
-                enterprise software stack as agent environments, and train
-                agents to complete their critical workflows within them.
-              </motion.p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Foundations Section */}
       <section
         id="foundations"
-        className="py-12 bg-gradient-to-b from-accent/3 to-paper"
+        className="pt-12 pb-12 bg-gradient-to-b from-accent/3 to-paper"
       >
-        <div className="max-w-4xl mx-auto px-6 text-left">
+        <div className="max-w-4xl mx-auto px-4 md:px-6 text-left">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -69,7 +18,7 @@ export default function Vision() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h2 className="text-saans-header text-left bg-gradient-to-r from-ink to-accent bg-clip-text text-transparent">
+            <h2 className="text-saans-header text-left text-ink">
               Foundations
             </h2>
 
@@ -156,7 +105,7 @@ export default function Vision() {
         id="specialization"
         className="py-12 bg-gradient-to-b from-paper to-accent/3"
       >
-        <div className="max-w-4xl mx-auto px-6 text-left">
+        <div className="max-w-4xl mx-auto px-4 md:px-6 text-left">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -164,7 +113,7 @@ export default function Vision() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h2 className="text-saans-header text-left bg-gradient-to-r from-ink to-accent bg-clip-text text-transparent">
+            <h2 className="text-saans-header text-left text-ink">
               Specialization
             </h2>
 
@@ -247,7 +196,7 @@ export default function Vision() {
         id="security"
         className="py-12 bg-gradient-to-b from-accent/3 to-paper"
       >
-        <div className="max-w-4xl mx-auto px-6 text-left">
+        <div className="max-w-4xl mx-auto px-4 md:px-6 text-left">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -255,9 +204,7 @@ export default function Vision() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h2 className="text-saans-header text-left bg-gradient-to-r from-ink to-accent bg-clip-text text-transparent">
-              Security
-            </h2>
+            <h2 className="text-saans-header text-left text-ink">Security</h2>
 
             <div className="space-y-6 text-left max-w-3xl">
               <motion.p
@@ -286,7 +233,7 @@ export default function Vision() {
 
       {/* Today Section */}
       <section id="today" className="py-12 pb-24 bg-paper">
-        <div className="max-w-4xl mx-auto px-6 text-left">
+        <div className="max-w-4xl mx-auto px-4 md:px-6 text-left">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -294,9 +241,7 @@ export default function Vision() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h2 className="text-saans-header text-left bg-gradient-to-r from-ink to-accent bg-clip-text text-transparent">
-              Today
-            </h2>
+            <h2 className="text-saans-header text-left text-ink">Today</h2>
 
             <div className="space-y-6 text-left max-w-3xl">
               <motion.p
